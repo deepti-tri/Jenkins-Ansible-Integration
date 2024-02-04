@@ -1,0 +1,25 @@
+---
+#Ansible Playbook to build and push Docker image to Registry
+
+- name: Playbook to build and run Docker
+  hosts: ansible_CN
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Delete existing Docker images from the Control Node
+      shell: docker rmi $(docker images -q) -f
+      ignore_errors: yes
+
+    - name: Push Docker image to Registry
+      docker_image:
+        name: simple-docker-image
+        build:
+          path: /opt/docker
+          pull: true
+        state: present
+        tag: "latest"
+        force_tag: yes
+        repository: <your-docker-hub-username>/simple-docker-image:latest
+        push: yes
+        source: build

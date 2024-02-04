@@ -1,4 +1,4 @@
-FROM tomcat:latest
-RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
-COPY ./*.war /usr/local/tomcat/webapps
+FROM tomcat:8.5.50-jdk8-openjdk
+MAINTAINER Your-Name-Here
+COPY ./<war_file_name>.war /usr/local/tomcat/webapps
 
