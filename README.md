@@ -1,7 +1,9 @@
 SampleWebApplication
 ====================
 ## System Architecture
-WiP
+
+![image](https://github.com/deepti-tri/Jenkins-Ansible-Integration/assets/100620410/b487efdc-5f44-4882-a771-fe08bde52e08)
+====================
 ###  Key Steps in the Pipeline
 #### Scenario
 Run Ansible Playbooks from Jenkins to automate infrastructure provisioning and application deployment.
